@@ -1,0 +1,45 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <tab id="cadencelabs" translate="label" sortOrder="300">
+            <label>Cadence Labs</label>
+        </tab>
+        <section id="cadence_fbpixel"  translate="label" type="text" sortOrder="3000" showInDefault="1" showInWebsite="1" showInStore="1" >
+            <class>separator-top</class>
+            <label>Facebook Pixel</label>
+            <tab>sales</tab>
+            <resource>Cadence_Fbpixel::config_cadence_fbpixel</resource>
+            <group id="general" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <comment>
+                    <![CDATA[The Facebook Pixel allows you to track when a Facebook ad results in visits and conversions (purchases) to your store. <a href="#">Click here</a> to read the install guide.]]>
+                </comment>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>The pixel will automatically track visits when enabled.</comment>
+                </field>
+                <field id="pixel_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Pixel Id</label>
+                    <comment>This is the pixelId for the facebook pixel (see the install guide for instructions on where to find this).</comment>
+                </field>
+            </group>
+            <group id="events" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Events</label>
+                <comment>
+                    <![CDATA[Choose what events the pixel tracks]]>
+                </comment>
+                <field id="conversion" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Conversion Event</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <requires>
+                        <group id="general" />
+                    </requires>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                    <comment>Enable to track the Conversion (purchase) event. Will track based on the order grand total and store currency.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
