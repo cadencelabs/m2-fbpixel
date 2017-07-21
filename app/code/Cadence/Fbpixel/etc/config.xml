@@ -1,19 +1,13 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <cadence_fbpixel>
-            <general>
-                <active>0</active>
-            </general>
-            <events>
-                <conversion>0</conversion>
-            </events>
+            <visitor>
+                <enable>0</enable>
+            </visitor>
+            <conversion>
+                <enable>0</enable>
+            </conversion>
         </cadence_fbpixel>
     </default>
 </config>

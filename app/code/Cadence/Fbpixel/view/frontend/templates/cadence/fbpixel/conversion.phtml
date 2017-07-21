@@ -1,0 +1,36 @@
+<?php
+/** @var Cadence\Fbpixel\Block\AbstractBlock $block */
+$helper = $block->getHelper();
+
+if (!$helper->isConversionPixelEnabled()) {
+	return;
+}
+$id = $helper->getVisitorPixelId();
+?>
+<?php
+/** @var Magento\Sales\Model\Order $order */
+$order = $helper->getOrder();
+
+if ($order) {
+	//Failsafe for bad order id
+	return;
+}
+
+$grand_total = round($order->getGrandTotal(), 2);
+$currency_code = $block->getCurrencyCode();
+$orderIds = $helper->getOrderIDs();
+$numItems = $helper->getOrderItemsCount();
+?>
+<!-- Facebook Conversion Code for Conversions -->
+<script>
+    fbq('track','Purchase', {
+        value: <?php echo $grand_total ?>,
+        currency: '<?php echo $currency_code ?>',
+        content_ids: <?php echo $orderIds ?>,
+        content_type: 'product',
+        num_items: <?php echo $numItems; ?>
+    });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=<?php echo $id ?>&ev=Purchase&cd[value]=<?php echo $grand_total ?>&cd[currency]=<?php echo $currency_code ?>&cd[num_items]=<?php echo $numItems ?>&noscript=1"
+    /></noscript>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_quote_product_add_after">
+        <observer name="cadence_fbpixel_add_to_cart" instance="Cadence\Fbpixel\Observer\SalesQuoteProductAddAfter" />
+    </event>
+    <event name="wishlist_add_product">
+        <observer name="cadence_fbpixel_add_to_wishlist" instance="Cadence\Fbpixel\Observer\WishlistAddProduct" />
+    </event>
+    <event name="controller_action_predispatch_multishipping_checkout_index">
+        <observer name="cadence_fbpixel_initiate_checkout_multi" instance="Cadence\Fbpixel\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_checkout_onepage_index">
+        <observer name="cadence_fbpixel_initiate_checkout_onepage" instance="Cadence\Fbpixel\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_catalogsearch_result_index">
+        <observer name="cadence_fbpixel_search" instance="Cadence\Fbpixel\Observer\Search" />
+    </event>
+    <event name="catalog_controller_product_init_after">
+        <observer name="cadence_fbpixel_product_init_after" instance="Cadence\Fbpixel\Observer\CatalogControllerProductInitAfter" />
+    </event>
+</config>

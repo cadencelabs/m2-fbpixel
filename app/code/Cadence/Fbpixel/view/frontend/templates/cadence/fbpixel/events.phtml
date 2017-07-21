@@ -1,0 +1,21 @@
+<?php
+/** @var Cadence\Fbpixel\Block\AbstractBlock $block */
+$helper = $block->getHelper();
+$session = $block->getSession();
+$id = $helper->getVisitorPixelId();
+?>
+<?php if ($helper->isAddToCartPixelEnabled() && $session->hasAddToCart()) : ?>
+	<?php echo $helper->getPixelHtml('AddToCart', $session->getAddToCart()); ?>
+<?php endif; ?>
+<?php if ($helper->isAddToWishlistPixelEnabled() && $session->hasAddToWishlist()): ?>
+	<?php echo $helper->getPixelHtml('AddToWishlist', $session->getAddToWishlist()); ?>
+<?php endif; ?>
+<?php if ($helper->isInitiateCheckoutPixelEnabled() && $session->hasInitiateCheckout()): ?>
+	<?php echo $helper->getPixelHtml('InitiateCheckout'); ?>
+<?php endif; ?>
+<?php if ($helper->isViewProductPixelEnabled() && $session->hasViewProduct()): ?>
+	<?php echo $helper->getPixelHtml('ViewContent', $session->getViewProduct()); ?>
+<?php endif; ?>
+<?php if ($helper->isSearchPixelEnabled() && $session->hasSearch()): ?>
+	<?php echo $helper->getPixelHtml('Search', $session->getSearch()); ?>
+<?php endif; ?>

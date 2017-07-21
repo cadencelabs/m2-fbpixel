@@ -50,3 +50,5 @@ atlassian*
 /vendor/*
 !/vendor/.htaccess
 /app/code/Cadence/Cim/view/frontend/requirejs-config.js
+
+.DS_Store
