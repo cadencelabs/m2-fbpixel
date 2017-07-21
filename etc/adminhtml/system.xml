@@ -41,7 +41,7 @@
                     <comment>The base pixel must be enabled to track addToWishlist. Includes parameters for the product sku added, price of product, and currency.</comment>
                 </field>
             </group>
-            <group id="initiate_chcekout" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="inititiate_checkout" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Initiate Checkout (Optional)</label>
                 <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable</label>

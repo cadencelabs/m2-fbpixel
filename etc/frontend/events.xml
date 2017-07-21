@@ -7,10 +7,13 @@
         <observer name="cadence_fbpixel_add_to_wishlist" instance="Cadence\Fbpixel\Observer\WishlistAddProduct" />
     </event>
     <event name="controller_action_predispatch_multishipping_checkout_index">
-    <observer name="cadence_fbpixel_initiate_checkout_multi" instance="Cadence\Fbpixel\Observer\InitiateCheckout" />
-</event>
+        <observer name="cadence_fbpixel_initiate_checkout_multi" instance="Cadence\Fbpixel\Observer\InitiateCheckout" />
+    </event>
     <event name="controller_action_predispatch_checkout_onepage_index">
         <observer name="cadence_fbpixel_initiate_checkout_onepage" instance="Cadence\Fbpixel\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="cadence_fbpixel_initiate_checkout_index_index" instance="Cadence\Fbpixel\Observer\InitiateCheckout" />
     </event>
     <event name="controller_action_predispatch_catalogsearch_result_index">
         <observer name="cadence_fbpixel_search" instance="Cadence\Fbpixel\Observer\Search" />
