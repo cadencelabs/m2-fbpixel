@@ -11,7 +11,7 @@ $id = $helper->getVisitorPixelId();
 /** @var Magento\Sales\Model\Order $order */
 $order = $helper->getOrder();
 
-if ($order) {
+if (!$order) {
 	//Failsafe for bad order id
 	return;
 }
