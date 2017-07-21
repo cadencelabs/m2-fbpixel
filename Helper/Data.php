@@ -23,19 +23,23 @@ class Data extends AbstractHelper{
 	protected $_productRepository;
 	/** @var \Magento\Store\Model\StoreManagerInterface $_storeManager */
 	protected $_storeManager;
+	/** @var \Cadence\Fbpixel\Model\Session $_fbPixelSession */
+	protected $_fbPixelSession;
 
 	public function __construct(
 		\Magento\Checkout\Model\Session $checkoutSession,
 		\Magento\Sales\Model\OrderFactory $orderFactory,
 		\Magento\Catalog\Model\ProductRepository $productRepository,
 		\Magento\Store\Model\StoreManagerInterface $storeManager,
-		\Magento\Framework\App\Helper\Context $context
+		\Magento\Framework\App\Helper\Context $context,
+		\Cadence\Fbpixel\Model\Session $fbPixelSession
 	) {
 		$this->_checkoutSession = $checkoutSession;
 		$this->_orderFactory = $orderFactory;
 		$this->_scopeConfig = $context->getScopeConfig();
 		$this->_productRepository = $productRepository;
 		$this->_storeManager = $storeManager;
+		$this->_fbPixelSession = $fbPixelSession;
 
 		parent::__construct( $context );
 	}
@@ -163,5 +167,9 @@ HTML;
 
 	public function getCurrencyCode(){
 		return $this->_storeManager->getStore()->getCurrentCurrency()->getCode();
+	}
+
+	public function getSession(){
+		return $this->_fbPixelSession;
 	}
 }

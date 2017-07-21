@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Cadence\Fbpixel\Model\Session\Storage" type="Magento\Framework\Session\Storage">
+        <arguments>
+            <argument name="namespace" xsi:type="string">cadence_fbpixel</argument>
+        </arguments>
+    </virtualType>
+    <type name="Cadence\Fbpixel\Model\Session">
+        <arguments>
+            <argument name="storage" xsi:type="object">Cadence\Fbpixel\Model\Session\Storage</argument>
+        </arguments>
+    </type>
+</config>
