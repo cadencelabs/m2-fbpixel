@@ -1,18 +1,30 @@
 {
   "name": "cadence/fbpixel",
-  "description": "",
+  "description": "Facebook Pixel & Events Support For Magento 2.x",
   "require": {
-    "php": "~5.5.0|~5.6.0",
+    "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
     "magento/module-directory": "100.1.0",
     "magento/module-checkout": "100.1.1",
     "magento/module-ui": "100.1.0",
     "magento/magento-composer-installer": "*"
   },
-  "suggest": {
-  },
+  "keywords": [
+    "Magento",
+    "Magento 2",
+    "Facebook Pixel",
+    "Facebook"
+  ],
   "type": "magento2-module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Cadence Labs",
+      "homepage": "https://www.cadence-labs.com",
+      "email": "info@cadence-labs.com"
+    }
   ],
   "autoload": {
     "files": [

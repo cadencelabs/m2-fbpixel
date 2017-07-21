@@ -4,7 +4,7 @@
         <section id="cadence_fbpixel"  translate="label" type="text" sortOrder="3000" showInDefault="1" showInWebsite="1" showInStore="1" >
             <class>separator-top</class>
             <label>Facebook Pixel</label>
-            <tab>sales</tab>
+            <tab>cadence</tab>
             <resource>Cadence_Fbpixel::config_cadence_fbpixel</resource>
             <group id="visitor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Visitor Pixel</label>
