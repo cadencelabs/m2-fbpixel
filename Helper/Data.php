@@ -114,7 +114,7 @@ HTML;
 			$orderIDs = array_merge($orderIDs, $this->_getProductTrackID($product));
 		}
 
-		return json_encode($orderIDs);
+		return json_encode(array_unique($orderIDs));
 	}
 
 	public function getOrder(){
