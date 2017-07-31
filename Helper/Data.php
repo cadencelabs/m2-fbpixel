@@ -162,7 +162,7 @@ HTML;
 	public function getOrderItemsCount()
 	{
 		$order = $this->getOrder();
-		return count($order->getItemsCollection());
+		return count($order->getAllVisibleItems());
 	}
 
 	public function getCurrencyCode(){

@@ -10,5 +10,19 @@
             <block class="Cadence\Fbpixel\Block\AbstractBlock" name="cadence_fbpixel_visitor" template="Cadence_Fbpixel::cadence/fbpixel/visitor.phtml"/>
             <block class="Cadence\Fbpixel\Block\AbstractBlock" name="cadence_fbpixel_events" template="Cadence_Fbpixel::cadence/fbpixel/events.phtml" />
         </referenceBlock>
+        <referenceBlock name="after.body.start">
+            <block class="Magento\Framework\View\Element\Template" name="cadence.fbpixel.fpc" before="-"
+                   template="Cadence_Fbpixel::cadence/fbpixel/fpc.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="cadenceFbpixelFpc" xsi:type="array">
+                                <item name="component" xsi:type="string">Cadence_Fbpixel/js/view/cadence-fbpixel-fpc</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
     </body>
 </page>
