@@ -20,8 +20,8 @@ define([
                         var eventData = loadedData.events[eventCounter];
                         //console.log(eventData);
                         if ("undefined" !== typeof eventData.eventAdditional && eventData.eventAdditional) {
-                            console.log("Tracking: " + eventData.eventName + " , with data: ");
-                            console.log(eventData.eventAdditional);
+                            //console.log("Tracking: " + eventData.eventName + " , with data: ");
+                            //console.log(eventData.eventAdditional);
                             fbq('track', eventData.eventName, eventData.eventAdditional || {});
                         }
                     }
