@@ -162,7 +162,13 @@ HTML;
 	public function getOrderItemsCount()
 	{
 		$order = $this->getOrder();
-		return count($order->getAllVisibleItems());
+		$qty = 0;
+		/** @var \Magento\Sales\Model\Order\Item $item */
+		foreach($order->getAllVisibleItems() as $item) {
+			// Get a whole number
+			$qty += round($item->getQtyOrdered());
+		}
+		return $qty;
 	}
 
 	public function getCurrencyCode(){
