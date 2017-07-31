@@ -5,6 +5,11 @@ namespace Cadence\Fbpixel\Model;
 class Session extends \Magento\Framework\Session\SessionManager
 {
 	/**
+	 * @var array
+	 */
+	protected $_ephemeralData = [];
+
+	/**
 	 * @param $data
 	 * @return $this
 	 */
@@ -92,7 +97,7 @@ class Session extends \Magento\Framework\Session\SessionManager
 	 */
 	public function hasViewProduct()
 	{
-		return $this->hasData('view_product');
+		return $this->_hasEphemeral('view_product');
 	}
 
 	/**
@@ -101,8 +106,8 @@ class Session extends \Magento\Framework\Session\SessionManager
 	public function getViewProduct()
 	{
 		if ($this->hasViewProduct()) {
-			$data = $this->getData('view_product');
-			$this->unsetData('view_product');
+			$data = $this->_getEphemeral('view_product');
+			$this->_unsetEphemeral('view_product');
 			return $data;
 		}
 		return null;
@@ -114,7 +119,7 @@ class Session extends \Magento\Framework\Session\SessionManager
 	 */
 	public function setViewProduct($data)
 	{
-		$this->setData('view_product', $data);
+		$this->_setEphemeral('view_product', $data);
 		return $this;
 	}
 
@@ -123,7 +128,7 @@ class Session extends \Magento\Framework\Session\SessionManager
 	 */
 	public function hasSearch()
 	{
-		return $this->hasData('search');
+		return $this->_hasEphemeral('search');
 	}
 
 	/**
@@ -132,8 +137,8 @@ class Session extends \Magento\Framework\Session\SessionManager
 	public function getSearch()
 	{
 		if ($this->hasSearch()) {
-			$data = $this->getData('search');
-			$this->unsetData('search');
+			$data = $this->_getEphemeral('search');
+			$this->_unsetEphemeral('search');
 			return $data;
 		}
 		return null;
@@ -145,8 +150,48 @@ class Session extends \Magento\Framework\Session\SessionManager
 	 */
 	public function setSearch($value)
 	{
-		$this->setData('search', $value);
+		$this->_setEphemeral('search', $value);
 		return $this;
 	}
 
+	/**
+	 * @param $key
+	 * @param $value
+	 * @return $this
+	 */
+	protected function _setEphemeral($key, $value)
+	{
+		$this->_ephemeralData[$key] = $value;
+		return $this;
+	}
+
+	/**
+	 * @param $key
+	 * @return mixed
+	 */
+	protected function _getEphemeral($key)
+	{
+		return isset($this->_ephemeralData[$key])
+			? $this->_ephemeralData[$key]
+			: null;
+	}
+
+	/**
+	 * @param $key
+	 * @return bool
+	 */
+	protected function _hasEphemeral($key)
+	{
+		return isset($this->_ephemeralData[$key]);
+	}
+
+	/**
+	 * @param $key
+	 * @return $this
+	 */
+	protected function _unsetEphemeral($key)
+	{
+		unset($this->_ephemeralData[$key]);
+		return $this;
+	}
 }
