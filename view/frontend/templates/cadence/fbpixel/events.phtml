@@ -5,9 +5,11 @@ $session = $block->getSession();
 $id = $helper->getVisitorPixelId();
 ?>
 
-<?php if ($helper->isAddToCartPixelEnabled() && $session->hasAddToCart()) : ?>
+<?php /*if ($helper->isAddToCartPixelEnabled() && $session->hasAddToCart()) : ?>
 	<?php echo $helper->getPixelHtml('AddToCart', $session->getAddToCart()); ?>
-<?php endif; ?>
+<?php endif;
+ AddToCart Handled by FPC
+ */ ?>
 <?php if ($helper->isAddToWishlistPixelEnabled() && $session->hasAddToWishlist()): ?>
 	<?php echo $helper->getPixelHtml('AddToWishlist', $session->getAddToWishlist()); ?>
 <?php endif; ?>
