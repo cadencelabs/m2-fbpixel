@@ -15,6 +15,6 @@ GPL 3.0
 
 ### More Info
 
-For user guide & full details see: https://www.cadence-labs.com/2017/07/free-magento-2-facebook-tracking-pixel-extension
+For user guide & full details see: https://www.cadence-labs.com/2017/09/free-magento-2-facebook-tracking-pixel-extension/
 
 
