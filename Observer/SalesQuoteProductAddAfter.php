@@ -47,8 +47,14 @@ class SalesQuoteProductAddAfter implements ObserverInterface {
 			$candidates['value'] += $item->getProduct()->getFinalPrice() * $item->getProduct()->getQty();
 		}
 
+		//verify if the product is an bundle product
+		$contentType = 'product';
+		if($product->getTypeId() == 'configurable'){
+			$contentType = 'product_group';
+		}
+
 		$data = array(
-			'content_type' => 'product',
+			'content_type' => $contentType,
 			'content_ids' => $candidates['content_ids'],
 			'value' => $candidates['value'],
 			'currency' => $this->_fbPixelHelper->getCurrencyCode()

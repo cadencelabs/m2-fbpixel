@@ -35,8 +35,14 @@ class WishlistAddProduct implements ObserverInterface {
 			return $this;
 		}
 
+		//verify if the product is an bundle product
+		$contentType = 'product';
+		if($product->getTypeId() == 'configurable'){
+			$contentType = 'product_group';
+		}
+
 		$data = [
-			'content_type' => 'product',
+			'content_type' => $contentType,
 			'content_ids' => [$product->getSku()],
 			'value' => $product->getFinalPrice(),
 			'currency' => $this->_fbPixelHelper->getCurrencyCode()
