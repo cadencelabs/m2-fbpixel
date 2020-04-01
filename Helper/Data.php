@@ -46,41 +46,41 @@ class Data extends AbstractHelper{
 
 	public function isVisitorPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/visitor/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/visitor/enabled', ScopeInterface::SCOPE_STORE);
 	}
 	public function isConversionPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue("cadence_fbpixel/conversion/enabled");
+		return $this->_scopeConfig->getValue("cadence_fbpixel/conversion/enabled", ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isAddToCartPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue("cadence_fbpixel/add_to_cart/enabled");
+		return $this->_scopeConfig->getValue("cadence_fbpixel/add_to_cart/enabled", ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isAddToWishlistPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/add_to_wishlist/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/add_to_wishlist/enabled', ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isInitiateCheckoutPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/inititiate_checkout/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/inititiate_checkout/enabled', ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isViewProductPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/view_product/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/view_product/enabled', ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isSearchPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/search/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/search/enabled', ScopeInterface::SCOPE_STORE);
 	}
 
 	public function getVisitorPixelId()
 	{
-		return $this->_scopeConfig->getValue("cadence_fbpixel/visitor/pixel_id");
+		return $this->_scopeConfig->getValue("cadence_fbpixel/visitor/pixel_id", ScopeInterface::SCOPE_STORE);
 	}
 
 	/**
