@@ -43,44 +43,43 @@ class Data extends AbstractHelper{
 
 		parent::__construct( $context );
 	}
-
 	public function isVisitorPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/visitor/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/visitor/enabled',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 	public function isConversionPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue("cadence_fbpixel/conversion/enabled");
+		return $this->_scopeConfig->getValue("cadence_fbpixel/conversion/enabled",\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isAddToCartPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue("cadence_fbpixel/add_to_cart/enabled");
+		return $this->_scopeConfig->getValue("cadence_fbpixel/add_to_cart/enabled",\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isAddToWishlistPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/add_to_wishlist/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/add_to_wishlist/enabled',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isInitiateCheckoutPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/inititiate_checkout/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/inititiate_checkout/enabled',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isViewProductPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/view_product/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/view_product/enabled',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 
 	public function isSearchPixelEnabled()
 	{
-		return $this->_scopeConfig->getValue('cadence_fbpixel/search/enabled');
+		return $this->_scopeConfig->getValue('cadence_fbpixel/search/enabled',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 
 	public function getVisitorPixelId()
 	{
-		return $this->_scopeConfig->getValue("cadence_fbpixel/visitor/pixel_id");
+		return $this->_scopeConfig->getValue("cadence_fbpixel/visitor/pixel_id",\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 	}
 
 	/**
